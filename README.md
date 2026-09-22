@@ -3,7 +3,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 
-DeSSIN is a blockchain implementation based on **PoGO (Proof of Gradient Optimization)** consensus that enables decentralized training and verification of machine learning models. It supports GGUF model formats, real ML inference, conditional transfers based on model outputs, and comprehensive fine-tuning capabilities.
+DeSSIN is a blockchain implementation based on a Gradient Optimization consensus that enables decentralized training and verification of machine learning models. It supports GGUF model formats, real ML inference, conditional transfers based on model outputs, and comprehensive fine-tuning capabilities.
 
 ## Key Features
 
