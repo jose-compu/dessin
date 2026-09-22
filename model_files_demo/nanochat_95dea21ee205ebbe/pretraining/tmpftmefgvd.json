@@ -1,0 +1,10 @@
+{
+  "vocab_size": 50000,
+  "model_max_length": 2048,
+  "special_tokens": [
+    "[PAD]",
+    "[CLS]",
+    "[SEP]",
+    "[MASK]"
+  ]
+}

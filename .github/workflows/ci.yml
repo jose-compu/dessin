@@ -1,0 +1,34 @@
+# CI: unit/integration tests under tests/ (e2e lives in e2e/ and is opt-in locally).
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install package + dev tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run tests (exclude slow / e2e markers when present)
+        run: |
+          pytest tests/ -m "not slow and not e2e" --tb=short -q \
+            || pytest tests/ --tb=short -q
